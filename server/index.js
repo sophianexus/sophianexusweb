@@ -2,12 +2,14 @@ const express = require('express');
 const nodemailer = require('nodemailer');
 const cors = require('cors');
 require('dotenv').config();
-const email_content = require('assets/email_content')
+
+const email_content = require('./assets/email_content.js');
+const { default: htmlContentTestVersion } = require('./assets/email_content.js');
 
 const app = express();
 
 app.use(cors({
-    origin: ["https://your-custom-domain.com", "http://localhost:5173"], 
+    origin: ["https://sophianexusweb.netlify.app"], 
     methods: ["POST"],
     credentials: true
 }));
@@ -25,11 +27,13 @@ const transporter = nodemailer.createTransport({
 app.post('/api/contact', (req, res) => {
     const { name, number, email } = req.body;
 
+    const htmlmessage = htmlContentTestVersion(name, number, email);
+
     const mailOptions = {
         from: email,
         to: process.env.TEST_ADMIN_TO_MAIL,
         subject: `New Lead: ${name}`,
-        html: email_content.htmlContentTestVersion
+        html: htmlmessage
     };
 
     transporter.sendMail(mailOptions, (error, info) => {
