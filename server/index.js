@@ -25,7 +25,7 @@ app.post('/api/contact', async (req, res) => {
     const htmlMessage = htmlContentTestVersion(name, number, email);
 
     const msg = {
-      to: process.env.TEST_ADMIN_TO_MAIL,
+      to: process.env.TEST_ADMINISTRATOR_EMAIL_ADDRESS,
       from: process.env.SENDGRID_EMAIL,
       subject: `New Lead: ${name}`,
       html: htmlMessage
