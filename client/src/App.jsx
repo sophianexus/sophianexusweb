@@ -12,7 +12,7 @@ function App() {
     setStatus({ type: 'sending', msg: 'Processing your request...' });
 
     try {
-      const response = await fetch('http://localhost:10000/api/contact', {
+      const response = await fetch('https://sophianexusweb.onrender.com', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(formData),
