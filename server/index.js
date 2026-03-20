@@ -1,65 +1,45 @@
-const express = require('express');
-const nodemailer = require('nodemailer');
-const cors = require('cors');
-require('dotenv').config();
-
-const email_content = require('./assets/email_content.js');
-const { default: htmlContentTestVersion } = require('./assets/email_content.js');
+import express from 'express';
+import cors from 'cors';
+import sgMail from '@sendgrid/mail';
+import htmlContentTestVersion from './assets/email_content.js';
+import dotenv from 'dotenv';
+dotenv.config();
 
 const app = express();
-
-app.use(cors({
-    origin: ["https://sophianexusweb.netlify.app"], 
-    methods: ["POST"],
-    credentials: true
-}));
-
 app.use(express.json());
 
-const transporter = nodemailer.createTransport({
-    service: 'gmail',
-    auth: {
-        user: process.env.NODE_EMAIL_ADMIN,
-        pass: process.env.NODE_EMAIL_ADMIN_PASSWORD
-    }
-});
+const FRONTEND_URL = "https://sophianexusweb.netlify.app";
 
-app.post('/api/contact', (req, res) => {
+app.use(cors({
+  origin: ["https://sophianexusweb.netlify.app", "http://localhost:5173"],
+  methods: ["POST"],
+  credentials: true
+}));
+
+sgMail.setApiKey(process.env.SENDGRID_API_KEY);
+
+app.post('/api/contact', async (req, res) => {
+  try {
     const { name, number, email } = req.body;
 
-    const htmlmessage = htmlContentTestVersion(name, number, email);
+    const htmlMessage = htmlContentTestVersion(name, number, email);
 
-    const mailOptions = {
-        from: email,
-        to: process.env.TEST_ADMIN_TO_MAIL,
-        subject: `New Lead: ${name}`,
-        html: htmlmessage
+    const msg = {
+      to: process.env.TEST_ADMIN_TO_MAIL,
+      from: process.env.SENDGRID_EMAIL,
+      subject: `New Lead: ${name}`,
+      html: htmlMessage
     };
 
-    transporter.sendMail(mailOptions, (error, info) => {
-        if (error) {
-            console.error("Email Error:", error);
-            return res.status(500).json({ success: false, message: "Error sending email" });
-        }
-        console.log("Email sent: " + info.response);
-        res.status(200).json({ success: true, message: "Email sent successfully!" });
-    });
+    await sgMail.send(msg);
+    console.log("Email sent successfully!");
+    res.status(200).json({ success: true, message: "Email sent!" });
+
+  } catch (error) {
+    console.error("Email sending error:", error);
+    res.status(500).json({ success: false, message: "Error sending email" });
+  }
 });
 
-const PORT = process.env.PORT || 10000; 
-app.listen(PORT, () => {
-    console.log(`Server is running on port ${PORT}`);
-});
-
-// fetch('http://localhost:10000/api/contact', {
-//   method: 'POST',
-//   headers: { 'Content-Type': 'application/json' },
-//   body: JSON.stringify({
-//     name: "Test User",
-//     number: "123456789",
-//     email: "tester@example.com"
-//   })
-// })
-// .then(res => res.json())
-// .then(data => console.log("Server Response:", data))
-// .catch(err => console.error("Error:", err));
+const PORT = process.env.PORT || 3000;
+app.listen(PORT, () => console.log(`Server running on port ${PORT}`));
