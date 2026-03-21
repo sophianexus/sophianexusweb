@@ -1,0 +1,395 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;700;800&family=JetBrains+Mono:wght@500&display=swap');
+
+body {
+  font-family: 'Inter', sans-serif;
+}
+
+html {
+  font-family: 'Inter', sans-serif;
+}
+
+.headsection {
+  position: relative;
+  width: 100%;
+  /* Change 300vh to 100vh if this is just the top section */
+  height: 100vh; 
+  display: flex;
+  justify-content: center;
+  align-items: flex-start; /* Keeps the nav at the top */
+  padding-top: 20px;
+  flex-direction: column; /* Stacks Header and Content vertically */
+  align-items: center; /* Keeps the glass header centered horizontally */
+  background: transparent;
+  
+  /* This is critical for 10-page sites: 
+     it clips the orbs so they don't overlap Section 2 */
+  overflow: hidden; 
+}
+
+.headsection::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0.03; /* Very subtle */
+  pointer-events: none;
+  z-index: 2;
+  background-image: url("https://grainy-gradients.vercel.app/noise.svg");
+}
+
+.light {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(80px); /* Keep this high for the "glow" look */
+  z-index: 1; /* Changed from 0 or -1 to ensure they sit on the background */
+  opacity: 0; /* Bump this up to 0.5 or 0.6 */
+  pointer-events: none;
+  
+  /* CHANGE THIS: 'multiply' can be tricky. 
+     'normal' or 'darken' is safer for light backgrounds. */
+  mix-blend-mode: normal;
+  animation: orbFadeIn 2s ease-out 0.5s forwards;
+}
+
+/* Adjust orbs to use percentages so they stay inside 100vh */
+.light1 {
+  width: 40vw;
+  height: 30vw;
+  background: radial-gradient(circle, #0a5004 30%, transparent 70%);
+  top: -10%;
+  left: -10%;
+  filter: blur(80px);
+  opacity: 0.3;
+  animation: float-around 8s infinite alternate ease-in-out;
+  opacity: 0; 
+  
+  /* Apply the fade-in first, then the floating animation */
+  /* duration | timing | delay | fill-mode */
+  animation: orbFadeIn 1s ease-out 0.5s forwards;
+}
+
+.light2 {
+  width: 500px;
+  height: 500px;
+  background: radial-gradient(circle, #86a10b 50%, #ffffff 20%);
+  top: -3%;
+  right: 10%;
+  opacity: 0;
+  animation: float-around 10s infinite alternate-reverse ease-in-out;
+  animation: orbFadeIn 1s ease-out 0.5s forwards;
+}
+
+.light3 {
+  width: 400px;
+  height: 400px;
+  background: radial-gradient(circle, #3a035a 50%, #ffffff 20%);
+  bottom: 10%;
+  left: 20%;
+  opacity: 0;
+  animation: float-around 12s infinite alternate ease-in-out;
+  animation: orbFadeIn 1s ease-out 0.5s forwards;
+}
+
+.light4 {
+  width: 500px;
+  height: 500px;
+  background: radial-gradient(circle, #135c8d 50%, #ffffff 20%);
+  top: 20%;
+  right: 0.2%;
+  opacity: 0;
+  animation: float-around 10s infinite alternate-reverse ease-in-out;
+  animation: orbFadeIn 1s ease-out 0.5s forwards;
+}
+
+/* The fluid motion animation */
+@keyframes float-around {
+  0% {
+    transform: translate(0, 0) scale(1);
+  }
+  33% {
+    transform: translate(30px, -50px) scale(1.2);
+  }
+  66% {
+    transform: translate(-20px, 20px) scale(0.8);
+  }
+  100% {
+    transform: translate(0, 0) scale(1);
+  }
+}
+.header {
+  font-family: 'Inter', sans-serif;
+  top: 20px;
+  z-index: 1000;
+  
+  width: 90%;
+  max-width: 1200px;
+  height: 64px; /* Slightly slimmer for a sleeker profile */
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 24px;
+  margin: 0 auto;
+
+  /* 1. Refined Glass: Less white, more blur */
+  background: rgba(255, 255, 255, 0.15); 
+  backdrop-filter: blur(20px); 
+  -webkit-backdrop-filter: blur(20px);
+  
+  /* 2. Professional Border: Very thin and light */
+  border: 1px solid rgba(255, 255, 255, 0.4);
+  border-radius: 18px;
+
+  /* 3. Multi-layered Shadow: One for depth, one for the 'inner glow' highlight */
+  box-shadow: 
+    inset 0 1px 1px rgba(255, 255, 255, 0.3), /* Highlight on top edge */
+    0 10px 30px rgba(0, 0, 0, 0.04);          /* Very soft outer shadow */
+
+  position: fixed; /* Or sticky, but ensure it's relative to the viewport */
+  top: 20px;
+  left: 50%;
+  transform: translateX(-50%); /* Keeps it centered */
+  
+  /* 2. Apply the animation */
+  /* duration | timing-function | delay | fill-mode */
+  animation: slideInDown 1s cubic-bezier(0.2, 0.8, 0.2, 1) 0.2s forwards;
+  
+  /* Start invisible so it doesn't "flash" before animating */
+  opacity: 0;
+}
+
+.header-buttons {
+  display: flex;
+  gap: 12px; /* Replaces margin-right for perfect alignment */
+}
+
+/* Base button styles */
+.header-buttons button {
+  padding: 8px 18px;
+  border-radius: 10px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+  border: none;
+}
+
+/* Secondary/Ghost Button */
+.btn-secondary {
+  background: transparent;
+  color: #1a1a1a;
+  opacity: 0.7;
+}
+
+.btn-secondary:hover {
+  opacity: 1;
+  background: rgba(255, 255, 255, 0.3);
+}
+
+/* Primary/Hero Button - This anchors the design */
+.btn-primary {
+  background: #1a1a1a;
+  color: #ffffff;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.btn-primary:hover {
+  background: #095a02;
+  transform: translateY(-1px);
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15);
+}
+
+.headtitle {
+  margin: 0;
+  font-size: 1.3rem;
+  font-weight: 800; /* Bold branding */
+  letter-spacing: -0.03em; /* Tight kerning looks premium */
+  color: #1a1a1a;
+}
+
+.headtitle span {
+  color: #0c7003; /* Tie in your green orbs */
+}
+
+
+@keyframes slideInDown {
+  from {
+    transform: translateY(-100%) translateX(-50%); /* Start above the screen */
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0) translateX(-50%); /* End at natural position */
+    opacity: 1;
+  }
+}
+
+@keyframes orbFadeIn {
+  from {
+    opacity: 0;
+    transform: scale(0.8); /* Starts slightly smaller for a "growing" effect */
+  }
+  to {
+    opacity: 0.35; /* Matches your desired light background visibility */
+    transform: scale(1);
+  }
+}
+
+.headcontent {
+  z-index: 5;
+  width: 90%;
+  max-width: 1200px;
+  margin: 9vh 0 auto 0; /* Magic: centers the content vertically in the remaining space */
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start; /* Aligns all text and buttons to the left */
+  text-align: left;
+}
+
+.headcontent h1 {
+  font-size: clamp(2.5rem, 8vw, 4.5rem); /* Fluid typography: gets smaller on phones */
+  line-height: 1.1;
+  margin-bottom: 20px;
+  color: #1a1a1a;
+  max-width: 600px; /* Forces the text to "bend" (wrap) at a specific width */
+}
+
+.headcontent p {
+  font-size: 1.1rem;
+  color: #4a4a4a;
+  max-width: 450px; /* Keeps the description text narrow and readable */
+  line-height: 1.6;
+  margin-bottom: 30px;
+}
+
+.cta-button {
+  padding: 14px 28px;
+  background: #1a1a1a;
+  font-family: 'Inter', sans-serif;
+  color: white;
+  border: none;
+  border-radius: 12px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: transform 0.2s ease, background 0.2s ease;
+}
+
+.cta-button:hover {
+  background: #095a02;
+  transform: translateY(-2px);
+}
+
+.headcontent_keyword {
+  text-decoration: underline green;
+}
+
+
+@media (max-width: 768px) {
+  .headsection {
+    height: 100vh; /* Ensure it fits the mobile viewport */
+    padding-top: 20px;
+    overflow: hidden; /* Critical to prevent horizontal shaking on touch */
+  }
+
+  .header {
+    /* 1. Make it shorter from both sides */
+    width: 85%; /* Adjust this percentage to make it shorter/longer */
+    max-width: 340px; /* Limits how wide it can get on larger phones */
+    
+    /* 2. Ensure it stays centered */
+    margin: 0 auto; 
+    
+    /* 3. Adjust internal spacing for the smaller width */
+    height: 48px;
+    padding: 0 12px;
+  }
+
+  .headtitle {
+    font-size: 0.85rem; /* Shrink the title to fit the shorter bar */
+  }
+
+  .header-buttons {
+    gap: 5px; /* Tighten the space between buttons */
+  }
+
+  .header-buttons button {
+    padding: 5px 10px;
+    font-size: 0.75rem;
+    border-radius: 8px;
+  }
+
+  /* Scale down the glowing orbs so they don't drown out the content */
+  .light1 {
+    width: 250px; 
+    height: 250px;
+    top: -50px;
+    left: -30px;
+    filter: blur(50px); /* Reduced blur for mobile performance */
+    opacity: 0;
+    animation: orbFadeIn 2s ease-out 0.8s forwards, 
+             float-around 12s infinite alternate-reverse ease-in-out 2.8s;
+  }
+
+  .light2 {
+    width: 250px;
+    height: 250px;
+    top: 100px;
+    right: -40px;
+    filter: blur(50px);
+    opacity: 0;
+    animation: orbFadeIn 2s ease-out 0.8s forwards, 
+             float-around 12s infinite alternate-reverse ease-in-out 2.8s;
+  }
+
+  .light3 {
+    width: 300px;
+    height: 300px;
+    bottom: 10%;
+    left: 1%;
+    filter: blur(40px);
+    opacity: 0;
+    animation: orbFadeIn 2s ease-out 0.8s forwards, 
+             float-around 12s infinite alternate-reverse ease-in-out 2.8s;
+  }
+
+  .light4 {
+    width: 0;
+    height: 0;
+    left: -100%;
+  }
+
+  /* Slow down animations for mobile to save battery/CPU */
+  .light1, .light2, .light3 {
+    animation-duration: 12s; 
+  }
+
+  .headcontent {
+    align-items: center;    /* Centers the button and text block */
+    text-align: center;     /* Centers the individual lines of text */
+    margin-top: 100px;      /* Gives space from the glass header */
+    padding: 0 20px;        /* Prevents text from touching screen edges */
+  }
+
+  .headcontent h1 {
+    font-size: 2.2rem;      /* Specifically smaller for mobile */
+    max-width: 100%;        /* Allows text to use the full width */
+    line-height: 1.2;
+    margin-bottom: 15px;
+  }
+
+  .headcontent p {
+    font-size: 0.95rem;     /* Smaller paragraph text */
+    max-width: 320px;       /* Keeps the paragraph "tight" and centered */
+    line-height: 1.5;
+    margin-bottom: 25px;
+    color: #555;            /* Slightly softer color for readability */
+  }
+
+  .cta-button {
+    width: 80%;             /* Makes the button easier to tap on mobile */
+    max-width: 280px;
+    padding: 12px 20px;
+    font-size: 0.95rem;
+  }
+}
