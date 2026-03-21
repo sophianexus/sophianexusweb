@@ -13,15 +13,12 @@ html {
   width: 100%;
   height: 100vh; 
   display: flex;
-  justify-content: center;
-  align-items: flex-start;
-  padding-top: 20px;
   flex-direction: column; 
+  justify-content: center;
   align-items: center;
-  background: transparent;
   overflow: hidden; 
+  background-color: #062111;
 }
-
 .headsection::before {
   content: "";
   position: absolute;
@@ -54,7 +51,7 @@ html {
   left: -10%;
   filter: blur(80px);
   opacity: 0.3;
-  animation: float-around 8s infinite alternate ease-in-out;
+  animation: float-around 3s infinite alternate ease-in-out;
   opacity: 0; 
   animation: orbFadeIn 1s ease-out 0.5s forwards;
 }
@@ -62,33 +59,33 @@ html {
 .light2 {
   width: 500px;
   height: 500px;
-  background: radial-gradient(circle, #86a10b 50%, #ffffff 20%);
+  background: radial-gradient(circle, #0a5004 50%, #ffffff 20%);
   top: -3%;
   right: 10%;
   opacity: 0;
-  animation: float-around 10s infinite alternate-reverse ease-in-out;
+  animation: float-around 3s infinite alternate-reverse ease-in-out;
   animation: orbFadeIn 1s ease-out 0.5s forwards;
 }
 
 .light3 {
   width: 400px;
   height: 400px;
-  background: radial-gradient(circle, #3a035a 50%, #ffffff 20%);
+  background: radial-gradient(circle, #0a5004 50%, #ffffff 20%);
   bottom: 10%;
   left: 20%;
   opacity: 0;
-  animation: float-around 12s infinite alternate ease-in-out;
+  animation: float-around 2s infinite alternate ease-in-out;
   animation: orbFadeIn 1s ease-out 0.5s forwards;
 }
 
 .light4 {
   width: 500px;
   height: 500px;
-  background: radial-gradient(circle, #135c8d 50%, #ffffff 20%);
+  background: radial-gradient(circle, #0a5004 50%, #ffffff 20%);
   top: 20%;
   right: 0.2%;
   opacity: 0;
-  animation: float-around 10s infinite alternate-reverse ease-in-out;
+  animation: float-around 4s infinite alternate-reverse ease-in-out;
   animation: orbFadeIn 1s ease-out 0.5s forwards;
 }
 
@@ -106,11 +103,11 @@ html {
     transform: translate(0, 0) scale(1);
   }
 }
+
 .header {
   font-family: 'Inter', sans-serif;
-  top: 20px;
+  position: fixed;
   z-index: 1000;
-  
   width: 90%;
   max-width: 1200px;
   height: 64px;
@@ -118,26 +115,55 @@ html {
   justify-content: space-between;
   align-items: center;
   padding: 0 24px;
-  margin: 0 auto;
-
-  background: rgba(255, 255, 255, 0.15); 
-  backdrop-filter: blur(20px); 
-  -webkit-backdrop-filter: blur(20px);
-  
-  border: 1px solid rgba(255, 255, 255, 0.4);
+  top: 20px;
+  left: 50%;
+  transform: translateX(-50%); 
+  background-color:#ccd6d03b;
+  border: 1px solid rgba(255, 255, 255, 0);
   border-radius: 18px;
   box-shadow: 
     inset 0 1px 1px rgba(255, 255, 255, 0.3),
     0 10px 30px rgba(0, 0, 0, 0.04);
 
-  position: fixed;
-  top: 20px;
-  left: 50%;
-  transform: translateX(-50%);
-  animation: slideInDown 1s cubic-bezier(0.2, 0.8, 0.2, 1) 0.2s forwards;
-  opacity: 0;
+  transition: transform 0.6s cubic-bezier(0.2, 0.8, 0.2, 1), opacity 0.5s ease;
+
+  animation: slideInDown 1.5s cubic-bezier(0.2, 0.8, 0.2, 1);
 }
 
+@keyframes videoFadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.bg-video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: 0;
+  animation: videoFadeIn 2s ease-in-out 0.5s forwards;
+}
+
+.video-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.226);
+  z-index: 1;
+}
+
+.header--hidden {
+  transform: translateY(-110%) translateX(-50%) !important;
+  opacity: 1;
+}
 .header-buttons {
   display: flex;
   gap: 12px;
@@ -155,7 +181,7 @@ html {
 
 .btn-secondary {
   background: transparent;
-  color: #1a1a1a;
+  color: #0d2015;
   opacity: 0.7;
 }
 
@@ -165,13 +191,13 @@ html {
 }
 
 .btn-primary {
-  background: #1a1a1a;
+  background: #ffffff27;
   color: #ffffff;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
 }
 
 .btn-primary:hover {
-  background: #095a02;
+  background: #344632;
   transform: translateY(-1px);
   box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15);
 }
@@ -181,7 +207,7 @@ html {
   font-size: 1.3rem;
   font-weight: 800;
   letter-spacing: -0.03em; 
-  color: #1a1a1a;
+  color: #ffffff;
 }
 
 .headtitle span {
@@ -205,6 +231,17 @@ html {
   }
 }
 
+@keyframes slideInDownforP {
+  from {
+    transform: translateY(10%) translateX(50%);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0) translateX(0);
+    opacity: 1;
+  }
+}
+
 @keyframes orbFadeIn {
   from {
     opacity: 0;
@@ -212,6 +249,17 @@ html {
   }
   to {
     opacity: 0.35;
+    transform: scale(1);
+  }
+}
+
+@keyframes orbFadeInButton {
+  from {
+    opacity: 0;
+    transform: scale(0.8);
+  }
+  to {
+    opacity: 1;
     transform: scale(1);
   }
 }
@@ -231,49 +279,93 @@ html {
   z-index: 5;
   width: 90%;
   max-width: 1200px;
-  margin: 9vh 0 auto 0;
+  margin: 0 auto; 
   display: flex;
   flex-direction: column;
-  align-items: flex-start;
-  text-align: left;
-  animation: fadeInLeft 1.2s cubic-bezier(0.2, 0.8, 0.2, 1) 0.6s forwards;
-  opacity: 0;
+  align-items: center;
+  justify-content: center; 
+  text-align: center;      
+  min-height: 80vh; 
+  overflow: hidden;
 }
 
 .headcontent h1 {
   font-size: clamp(2.5rem, 8vw, 4.5rem);
   line-height: 1.1;
   margin-bottom: 20px;
-  color: #1a1a1a;
-  max-width: 600px;
+  color: #ffffff;
+  max-width: 900px; 
+  animation: fadeInLeft 1.2s cubic-bezier(0.2, 0.8, 0.2, 1) 0.6s forwards;
+  opacity: 0;
 }
 
 .headcontent p {
   font-size: 1.1rem;
-  color: #4a4a4a;
-  max-width: 450px;
+  color: #a7a7a7;
+  max-width: 650px; 
   line-height: 1.6;
   margin-bottom: 30px;
+  animation: slideInDownforP 1.2s cubic-bezier(0.2, 0.8, 0.2, 1) 0.6s forwards;
+  opacity: 0;
 }
-
 .cta-button {
+  position: relative;
   padding: 14px 28px;
-  background: #1a1a1a;
-  font-family: 'Inter', sans-serif;
+  background: #ffffff1e;
   color: white;
   border: none;
   border-radius: 12px;
   font-size: 1rem;
   font-weight: 600;
   cursor: pointer;
-  transition: transform 0.2s ease, background 0.2s ease;
+  z-index: 1;
+  overflow: hidden;
+  transition: transform 0.3s ease;
+  opacity: 0;
+  animation: orbFadeInButton 1.2s cubic-bezier(0.2, 0.8, 0.2, 1) 0.6s forwards;
+}
+
+@keyframes rotateBorder {
+  0% { transform: translate(-50%, -50%) rotate(0deg); }
+  100% { transform: translate(-50%, -50%) rotate(360deg); }
+}
+
+
+.cta-button::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 200%;
+  height: 200%;
+  background: conic-gradient(
+    transparent, 
+    #043f24,
+    transparent 30%
+  );
+  animation: rotateBorder 4s linear infinite;
+  transform: translate(-50%, -50%);
+  z-index: -2;
+}
+
+.cta-button::after {
+  content: "";
+  position: absolute;
+  inset: 6px;
+  background: #0d2015;
+  border-radius: 10px;
+  z-index: -1;
+  transition: all 0.3s ease;
 }
 
 .cta-button:hover {
-  background: #095a02;
-  transform: translateY(-2px);
+  transform: translateY(-3px) scale(1.02);
 }
 
+.cta-button:hover::after {
+  background: #043f24;
+  transform: scale(1.01);
+}
 .headcontent_keyword {
   text-decoration: underline green;
 }
@@ -282,7 +374,7 @@ html {
 @media (max-width: 768px) {
   .headsection {
     height: 100vh;
-    padding-top: 20px;
+    padding-top: 10px;
     overflow: hidden;
   }
 
@@ -297,7 +389,7 @@ html {
   }
 
   .headtitle {
-    font-size: 0.85rem;
+    font-size: 0.84rem;
   }
 
   .header-buttons {
@@ -356,8 +448,12 @@ html {
   .headcontent {
     align-items: center;
     text-align: center; 
-    margin-top: 100px;  
-    padding: 0 20px;    
+    margin-top: 80px;  
+    padding: 0 20px; 
+  }
+
+  .headcontent_span span{
+    font-size: 3px;
   }
 
   .headcontent h1 {
@@ -377,7 +473,7 @@ html {
 
   .cta-button {
     width: 80%;             
-    max-width: 280px;
+    max-width: 200px;
     padding: 12px 20px;
     font-size: 0.95rem;
   }
