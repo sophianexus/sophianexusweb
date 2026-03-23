@@ -1,0 +1,59 @@
+/*
+  .light {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(80px); 
+  z-index: 1;
+  opacity: 0;
+  pointer-events: none;
+  mix-blend-mode: normal;
+  animation: orbFadeIn 2s ease-out 0.5s forwards;
+}
+
+  .light1 {
+  width: 40vw;
+  height: 30vw;
+  background: radial-gradient(circle, #0a5004 30%, transparent 70%);
+  top: -10%;
+  left: -10%;
+  filter: blur(80px);
+  opacity: 0.3;
+  animation: float-around 3s infinite alternate ease-in-out;
+  opacity: 0; 
+  animation: orbFadeIn 1s ease-out 0.5s forwards;
+}
+
+.light2 {
+  width: 500px;
+  height: 500px;
+  background: radial-gradient(circle, #0a5004 50%, #ffffff 20%);
+  top: -3%;
+  right: 10%;
+  opacity: 0;
+  animation: float-around 3s infinite alternate-reverse ease-in-out;
+  animation: orbFadeIn 1s ease-out 0.5s forwards;
+}
+
+.light3 {
+  width: 400px;
+  height: 400px;
+  background: radial-gradient(circle, #0a5004 50%, #ffffff 20%);
+  bottom: 10%;
+  left: 20%;
+  opacity: 0;
+  animation: float-around 2s infinite alternate ease-in-out;
+  animation: orbFadeIn 1s ease-out 0.5s forwards;
+}
+
+.light4 {
+  width: 500px;
+  height: 500px;
+  background: radial-gradient(circle, #0a5004 50%, #ffffff 20%);
+  top: 20%;
+  right: 0.2%;
+  opacity: 0;
+  animation: float-around 4s infinite alternate-reverse ease-in-out;
+  animation: orbFadeIn 1s ease-out 0.5s forwards;
+}
+
+*/
