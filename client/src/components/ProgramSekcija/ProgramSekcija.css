@@ -1,0 +1,114 @@
+.program-section {
+  width: 100%;
+  padding: 120px 0;
+  background: #ffffff;
+  color: #0d2015;
+}
+
+.program-container {
+  width: 90%;
+  max-width: 1200px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.program-main-title {
+  font-size: 3.5rem;
+  font-weight: 800;
+  margin: 20px 0 60px 0;
+  letter-spacing: -0.03em;
+}
+
+.program-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 30px;
+}
+
+.program-card {
+  background: #f8faf9;
+  padding: 40px;
+  border-radius: 30px;
+  text-align: left;
+  border: 1px solid rgba(13, 32, 21, 0.05);
+  transition: all 0.4s ease;
+  opacity: 0;
+  transform: translateY(30px);
+}
+
+.program-card.featured {
+  grid-column: span 2;
+  background: #0d2015;
+  color: #ffffff;
+  display: flex;
+  align-items: center;
+  gap: 40px;
+}
+
+.program-card.featured p {
+  color: rgb(177, 177, 177)
+}
+
+.featured .program-subtitle {
+  color: #0c7003;
+}
+
+.featured p {
+  color: rgba(255, 255, 255, 0.8);
+}
+
+.card-icon {
+  font-size: 2.5rem;
+  margin-bottom: 20px;
+}
+
+.program-card h3 {
+  font-size: 1.5rem;
+  margin-bottom: 10px;
+}
+
+.program-subtitle {
+  display: block;
+  font-weight: 700;
+  color: #0c7003;
+  margin-bottom: 15px;
+  font-size: 0.9rem;
+  text-transform: uppercase;
+}
+
+.program-card p {
+  line-height: 1.6;
+  font-size: 1.05rem;
+  color: #4a4a4a;
+}
+
+.program-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 20px 40px rgba(0,0,0,0.05);
+  border-color: #0c7003;
+}
+
+.is-visible .program-card {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.is-visible .program-card:nth-child(1) { transition-delay: 0.2s; }
+.is-visible .program-card:nth-child(2) { transition-delay: 0.4s; }
+.is-visible .program-card:nth-child(3) { transition-delay: 0.6s; }
+.is-visible .program-card:nth-child(4) { transition-delay: 0.8s; }
+.is-visible .program-card:nth-child(5) { transition-delay: 1s; }
+
+@media (max-width: 900px) {
+  .program-grid {
+    grid-template-columns: 1fr;
+  }
+  .program-card.featured {
+    grid-column: span 1;
+    flex-direction: column;
+    text-align: center;
+  }
+  .program-main-title {
+    font-size: 2.5rem;
+  }
+}
