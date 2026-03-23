@@ -1,0 +1,279 @@
+.iskustvo-premium-section {
+  width: 100%;
+  padding: 120px 0;
+  background: #ffffff;
+  color: #0d2015;
+  position: relative;
+  overflow: hidden;
+}
+
+.iskustvo-ambient-glow {
+  position: absolute;
+  top: 10%;
+  right: -5%;
+  width: 50vw;
+  height: 50vh;
+  background: radial-gradient(circle, rgba(30, 215, 96, 0.05) 0%, transparent 70%);
+  pointer-events: none;
+}
+
+.iskustvo-container {
+  width: 85%;
+  max-width: 1200px;
+  margin: 0 auto;
+  position: relative;
+  z-index: 2;
+}
+
+.iskustvo-intro-fade {
+  margin-bottom: 80px;
+  opacity: 0;
+  transform: translateY(30px);
+  transition: all 1s ease;
+}
+
+.is-visible .iskustvo-intro-fade {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.iskustvo-upper-kicker {
+  text-transform: uppercase;
+  letter-spacing: 4px;
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: #1ed760;
+  display: block;
+  margin-bottom: 20px;
+}
+
+.iskustvo-main-question {
+  font-size: clamp(2rem, 4vw, 3rem);
+  line-height: 1.2;
+  font-weight: 300;
+}
+
+.iskustvo-italic-quote {
+  font-style: italic;
+  font-weight: 500;
+}
+
+.iskustvo-content-grid {
+  display: grid;
+  grid-template-columns: 1.1fr 0.9fr;
+  gap: 100px;
+}
+
+.iskustvo-story-col {
+  opacity: 0;
+  transform: translateX(-40px);
+  transition: all 1s ease 0.3s;
+}
+
+.is-visible .iskustvo-story-col {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.iskustvo-story-p {
+  font-size: 1.2rem;
+  line-height: 1.6;
+  color: #555;
+  margin-bottom: 30px;
+}
+
+.iskustvo-divider-line {
+  width: 50px;
+  height: 2px;
+  background: #1ed760;
+  margin-bottom: 30px;
+}
+
+.iskustvo-story-p-bold {
+  font-size: 1.6rem;
+  font-weight: 300;
+  line-height: 1.3;
+  margin-bottom: 40px;
+}
+
+.iskustvo-text-reveal {
+  font-weight: 700;
+  color: #0d2015;
+}
+
+.iskustvo-minimal-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.iskustvo-item {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  font-size: 1.1rem;
+}
+
+.iskustvo-item span {
+  font-family: serif;
+  font-style: italic;
+  color: #1ed760;
+  font-weight: 700;
+}
+
+.iskustvo-statement-col {
+  opacity: 0;
+  transform: translateX(40px);
+  transition: all 1s ease 0.5s;
+}
+
+.is-visible .iskustvo-statement-col {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.iskustvo-card {
+  position: relative;
+  background: #ffffff;
+  padding: 50px;
+  border: 1px solid rgba(0, 0, 0, 0.05);
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.05);
+  border-radius: 4px;
+}
+
+.iskustvo-card-inner {
+  position: relative;
+  z-index: 2;
+}
+
+.iskustvo-card-pre {
+  text-transform: uppercase;
+  font-size: 0.7rem;
+  letter-spacing: 2px;
+  color: #999;
+  margin-bottom: 25px;
+}
+
+.iskustvo-card-title {
+  font-size: 1.8rem;
+  line-height: 1.4;
+  font-weight: 500;
+  margin-bottom: 30px;
+}
+
+.iskustvo-card-separator {
+  width: 40px;
+  height: 1px;
+  background: #eee;
+  margin-bottom: 30px;
+}
+
+.iskustvo-card-conclusion {
+  font-size: 1.2rem;
+  line-height: 1.5;
+}
+
+.iskustvo-card-conclusion strong {
+  color: #1ed760;
+}
+
+.iskustvo-card-blur-background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: radial-gradient(circle at center, rgba(30, 215, 96, 0.08) 0%, transparent 80%);
+  filter: blur(20px);
+  z-index: 1;
+}
+
+.iskustvo-premium-section {
+  width: 100%;
+  padding: 120px 0;
+  background: #ffffff;
+  color: #0d2015;
+  position: relative;
+  overflow: hidden;
+}
+
+.iskustvo-main-question {
+  position: relative;
+  display: inline-block;
+}
+
+.title-underline {
+  position: absolute;
+  bottom: -10px;
+  left: 50%;
+  width: 0;
+  height: 2px;
+  background: #1ed760;
+  transition: width 0.5s cubic-bezier(0.25, 0.1, 0.25, 1), left 0.5s cubic-bezier(0.25, 0.1, 0.25, 1);
+  transform: translateX(-50%);
+}
+
+.iskustvo-main-question:hover .title-underline {
+  width: 80%;
+}
+
+.iskustvo-item {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  font-size: 1.1rem;
+  transition: transform 0.3s ease, color 0.3s ease;
+  cursor: pointer;
+  padding: 10px 0;
+}
+
+.iskustvo-item-num {
+  font-family: serif;
+  font-style: italic;
+  color: #1ed760;
+  font-weight: 700;
+  transition: transform 0.3s ease, text-shadow 0.3s ease;
+}
+
+.iskustvo-item:hover {
+  transform: translateX(10px);
+  color: #000;
+}
+
+.iskustvo-item:hover .iskustvo-item-num {
+  transform: scale(1.3) rotate(-5deg);
+  text-shadow: 0 0 10px rgba(30, 215, 96, 0.6);
+}
+
+.iskustvo-card {
+  position: relative;
+  background: #ffffff;
+  padding: 50px;
+  border: 1px solid rgba(0, 0, 0, 0.05);
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.03);
+  border-radius: 4px;
+  transition: transform 0.4s cubic-bezier(0.165, 0.84, 0.44, 1), box-shadow 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+
+.iskustvo-card:hover {
+  transform: translateY(-10px) scale(1.02);
+  box-shadow: 0 30px 60px rgba(30, 215, 96, 0.1);
+}
+
+.iskustvo-card-conclusion strong {
+  color: #1ed760;
+  transition: color 0.3s ease, border-bottom 0.3s ease;
+  border-bottom: 2px solid transparent;
+}
+
+.iskustvo-card:hover .iskustvo-card-conclusion strong {
+  color: #0c7003;
+  border-bottom: 2px solid #1ed760;
+}
+
+@media (max-width: 968px) {
+  .iskustvo-content-grid {
+    grid-template-columns: 1fr;
+    gap: 60px;
+  }
+}
