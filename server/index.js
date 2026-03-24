@@ -13,7 +13,7 @@ const app = express();
 app.set('trust proxy', 1);
 app.use(express.json());
 
-const NETLIFYLINK = "https://sophianexusweb.netlify.app";
+const NETLIFYLINK = "https://sophianexusweb.vercel.app";
 const TESTURL = "http://localhost:5173"
 
 const allowedOrigins = [
