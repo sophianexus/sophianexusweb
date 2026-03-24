@@ -413,3 +413,19 @@ html, body {
     font-size: 0.95rem;
   }
 }
+
+@media (max-width: 600px) {
+  .head-actions {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    width: 100%;
+    align-items: center;
+  }
+
+  .secondary-button, .cta-button {
+    width: 100%;
+    max-width: 300px;
+    box-sizing: border-box;
+  }
+}
