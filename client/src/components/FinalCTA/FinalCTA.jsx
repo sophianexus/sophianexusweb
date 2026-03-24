@@ -35,7 +35,7 @@ function FinalCTA() {
     const fullNum = `${selectedPrefix} ${formData.number}`;
     
     try {
-      const response = await fetch(`http://${host}:${port}/${fendpoint}`, {
+      const response = await fetch(`https://sophianexusweb.onrender.com`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ ...formData, number: fullNum }),
