@@ -669,6 +669,10 @@
     justify-content: center;
     width: 100%;
   }
+
+  .badge-prijavi {
+    margin-top: 22px;
+  }
 }
 
 @media (max-width: 650px) {
