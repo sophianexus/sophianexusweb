@@ -41,20 +41,6 @@ html, body {
   text-align: center;
 }
 
-.location-tag {
-  display: inline-block;
-  padding: 10px 20px;
-  background: rgba(255, 255, 255, 0.07);
-  backdrop-filter: blur(15px);
-  border-radius: 100px;
-  font-size: 0.85rem;
-  letter-spacing: 2px;
-  text-transform: uppercase;
-  color: #1ed760;
-  border: 1px solid rgba(255, 255, 255, 0.1);
-  margin-bottom: 30px;
-  animation: fadeInDown 1s ease forwards;
-}
 
 .headcontent h1 {
   font-size: clamp(2.5rem, 7vw, 5rem);
@@ -195,9 +181,33 @@ html, body {
   animation: scrollAnim 2s infinite ease-in-out;
 }
 
+.location-tag {
+  display: inline-flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+  padding: 12px 24px;
+  background: rgba(255, 255, 255, 0.07);
+  backdrop-filter: blur(15px);
+  color: #1ed760;
+  border-radius: 20px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  margin-bottom: 30px;
+}
+
+.location-line-1 {
+  font-size: 0.85rem;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  color: #1ed760;
+  white-space: nowrap;
+}
+
 .location-tag-group {
-  font-size: 10px;
-  color: rgb(255, 255, 255);
+  font-size: 11px;
+  color: rgba(255, 255, 255, 0.8);
+  text-transform: none;
+  letter-spacing: 0.5px;
 }
 
 @keyframes scrollAnim {
@@ -307,9 +317,6 @@ html, body {
     padding: 0 12px;
   }
 
-  .location-tag {
-    margin-top: -150px;
-  }
 
   .headtitle {
     font-size: 0.84rem;
@@ -427,5 +434,18 @@ html, body {
     width: 100%;
     max-width: 300px;
     box-sizing: border-box;
+  }
+}
+
+@media (max-width: 768px) {
+  .location-tag {
+    padding: 10px 15px;
+    width: auto;
+    max-width: 95vw;
+  }
+
+  .location-line-1 {
+    font-size: 0.65rem;
+    letter-spacing: 1px;
   }
 }
