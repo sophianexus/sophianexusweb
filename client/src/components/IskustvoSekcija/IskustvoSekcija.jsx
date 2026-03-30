@@ -2,6 +2,13 @@ import React from "react";
 import { useInView } from "react-intersection-observer";
 import "./IskustvoSekcija.css";
 
+import main_video2 from '../../assets/new_images/main_video2.mp4';
+import pokretVideo from '../../assets/new_images/pokret.mp4';
+import danVideo from '../../assets/new_images/dan.mp4';
+import seVideo from '../../assets/new_images/se.mp4';
+import dahVideo from '../../assets/new_images/dah.mp4';
+import sviranjeVideo from '../../assets/new_images/sviranje.mp4';
+
 function IskustvoSekcija() {
   const { ref, inView } = useInView({ 
     triggerOnce: true, 
@@ -11,12 +18,14 @@ function IskustvoSekcija() {
   return (
     <section ref={ref} className={`iskustvo-premium-section ${inView ? "is-visible" : ""}`}>
       <div className="iskustvo-ambient-glow"></div>
+      
       <div className="iskustvo-container">
         <div className="iskustvo-intro-fade">
           <span className="iskustvo-upper-kicker">Biologija Stresa</span>
           <h2 className="iskustvo-main-question">
             Većina nas pokušava<br />
             <span className="iskustvo-italic-quote">da <strong>“riješi stres razmišljanjem.”</strong></span>
+            <span className="title-underline"></span>
           </h2>
         </div>
         <div className="iskustvo-content-grid">
@@ -29,10 +38,31 @@ function IskustvoSekcija() {
               On je duboko upisan u:<br />
               <span className="iskustvo-text-reveal">tvoje biološko postojanje.</span>
             </p>
+            
             <div className="iskustvo-minimal-grid">
-              <div className="iskustvo-item"><span>01</span> Napetost u tvojim mišićima</div>
-              <div className="iskustvo-item"><span>02</span> Plitkost u tvom disanju</div>
-              <div className="iskustvo-item"><span>03</span> Alarm u tvom nervnom sistemu</div>
+              <div className="iskustvo-item">
+                <span className="iskustvo-item-num">01</span> Napetost u tvojim mišićima
+              </div>
+              <div className="iskustvo-item">
+                <span className="iskustvo-item-num">02</span> Plitkost u tvom disanju
+              </div>
+              <div className="iskustvo-item">
+                <span className="iskustvo-item-num">03</span> Alarm u tvom nervnom sistemu
+              </div>
+            </div>
+            <div className="iskustvo-dual-videos">
+              <div className="iskustvo-mini-video v1">
+                <video autoPlay muted loop playsInline>
+                  <source src={sviranjeVideo} type="video/mp4" />
+                </video>
+                <div className="mini-video-overlay">Proces</div>
+              </div>
+              <div className="iskustvo-mini-video v2">
+                <video autoPlay muted loop playsInline>
+                  <source src={pokretVideo} type="video/mp4" />
+                </video>
+                <div className="mini-video-overlay">Pokret</div>
+              </div>
             </div>
           </div>
           <div className="iskustvo-statement-col">
@@ -48,6 +78,14 @@ function IskustvoSekcija() {
                 </p>
               </div>
               <div className="iskustvo-card-blur-background"></div>
+            </div>
+
+            <div className="iskustvo-video-wrapper">
+              <video autoPlay muted loop playsInline className="iskustvo-video-element">
+                <source src={seVideo} type="video/mp4" />
+              </video>
+              <div className="video-overlay-gradient"></div>
+              <div className="video-play-hint">Ambientalno Iskustvo</div>
             </div>
           </div>
         </div>
