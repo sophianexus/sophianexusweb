@@ -42,7 +42,7 @@ function DobitakSekcija() {
             <div className="gallery-card card-4"><img src={picture2} alt="Reset 4" /></div>
             <div className="gallery-card card-5">
                <img src={picture1} alt="Reset 5" />
-               <div className="card-glass-overlay">Sophia Nexus</div>
+               <div className="card-glass-overlay">REGENERACIJA</div>
             </div>
           </div>
         </div>
