@@ -2,9 +2,10 @@ import React from "react";
 import { useInView } from "react-intersection-observer";
 import "./Investicija.css";
 import snimak from "../../assets/snimak.mov"
+import mainVideo from '../../assets/new_images/main_video.mp4';
 import vis from "../../assets/em2.jpg";
-import hrana from "../../assets/stacesdobiti.jpg";
-import sta from "../../assets/hrana2.jpg";
+import hrana from "../../assets/new_images/image2.jpeg";
+import sta from "../../assets/new_images/image6.jpeg";
 import em from "../../assets/em.jpg";
 
 function Investicija() {
@@ -39,7 +40,7 @@ function Investicija() {
         </div>
         <div className="invest-gallery-orbital">
           <div className="orbital-item central-video">
-            <video src={snimak} autoPlay loop muted playsInline />
+            <video src={mainVideo} autoPlay loop muted playsInline />
           </div>
           <div className="orbital-item inv-img-1"><img src={hrana} alt="slika nije pornadjena" /></div>
           <div className="orbital-item inv-img-2"><img src={em} alt="slika nije pornadjena" /></div>
