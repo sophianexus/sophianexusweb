@@ -264,3 +264,115 @@
   }
   
 }
+
+@media (max-width: 968px) {
+  .text-col-green {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 0 15px; 
+  }
+
+  .benefit-list {
+    text-align: center;
+    list-style: none;
+    padding: 0;
+    width: 100%;
+  }
+
+  .benefit-list li {
+    justify-content: center;
+    padding-right: 0;
+    font-size: 1.1rem;
+    width: 100%;
+  }
+
+  .retreat-footer-note {
+    margin: 40px auto 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    max-width: 90%;
+    text-align: center;
+  }
+
+  .mini-divider {
+    margin: 0 auto 15px auto;
+  }
+
+  .retreat-footer-note p {
+    font-size: 0.95rem;
+    line-height: 1.4;
+    max-width: 300px;
+  }
+}
+
+@media (max-width: 968px) {
+  .stacked-gallery {
+    width: 220px;
+    height: 310px;
+    margin: 40px auto; 
+    position: relative;
+  }
+
+  .card-1 { transform: rotate(-10deg) translate(-25px, 15px); opacity: 0.3; }
+  .card-2 { transform: rotate(-7deg) translate(-15px, 10px); opacity: 0.5; }
+  .card-3 { transform: rotate(-4deg) translate(-10px, 5px); opacity: 0.7; }
+  .card-4 { transform: rotate(-2deg) translate(-5px, 2px); opacity: 0.9; }
+  .card-5 { transform: rotate(0deg); opacity: 1; }
+
+  .stacked-gallery:hover .gallery-card {
+    transform: scale(1.03);
+    box-shadow: -10px 10px 25px rgba(0, 0, 0, 0.4);
+  }
+
+  .card-glass-overlay {
+    bottom: 15px;
+    left: 15px;
+    padding: 5px 10px;
+    font-size: 0.6rem;
+  }
+
+  
+}
+
+@media (max-width: 968px) {
+  .benefit-list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
+    padding: 0 10px;
+    margin-bottom: 30px;
+    list-style: none;
+  }
+
+  .benefit-list li {
+    font-size: 0.9rem;
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(5px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    padding: 8px 16px;
+    border-radius: 50px;
+    color: rgba(255, 255, 255, 0.9);
+    margin-bottom: 0;
+    white-space: nowrap;
+    display: inline-flex;
+    align-items: center;
+  }
+
+  .benefit-list li::before {
+    display: none;
+  }
+}
+
+@media (max-width: 400px) {
+  .stacked-gallery {
+    width: 190px;
+    height: 270px;
+  }
+  
+  .retreat-main-title {
+    font-size: 1.8rem !important;
+  }
+}
