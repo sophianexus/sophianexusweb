@@ -1,6 +1,8 @@
 import React from "react";
 import "./Footer.css";
 
+import logo_rmbg from '../../logo/sophianexuslogo-rembg.png';
+
 function Footer() {
   const currentYear = new Date().getFullYear();
 
@@ -9,6 +11,7 @@ function Footer() {
       <div className="footer-container">
         <div className="footer-top">
           <div className="footer-brand">
+            <img src={logo_rmbg} alt="Logo not found." />
             <h2 className="footer-logo">SOPHIA<span>NEXUS</span></h2>
             <p>Prostor za tvoj unutrašnji mir i somatski rad.</p>
           </div>
@@ -17,7 +20,7 @@ function Footer() {
             <a href="https://instagram.com/" target="_blank" rel="noreferrer" className="social-link">
               INSTAGRAM
             </a>
-            <a href="mailto:info@sophianexus.com" className="social-link">
+            <a href="mailto:sophianexusclient@gmail.com" className="social-link">
               KONTAKT
             </a>
           </div>
