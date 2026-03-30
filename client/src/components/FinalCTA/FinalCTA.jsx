@@ -66,7 +66,7 @@ function FinalCTA() {
 
   return (
     <>
-    <section ref={ref} className={`final-cta-section ${inView ? "is-visible" : ""}`}>
+    <section ref={ref} className={`final-cta-section ${inView ? "is-visible" : ""}`} id="prijavi-se">
       <div className="bg-sphere sphere-1"></div>
       <div className="bg-sphere sphere-2"></div>
       <div className="cta-container">
@@ -101,7 +101,7 @@ function FinalCTA() {
               </div>
               <div className="hook-content">
                 <span className="hook-label" id="hook-label-where">Gdje?</span>
-                <p className="hook-value" id="prijavi-se">Etno selo Brezna</p>
+                <p className="hook-value">Etno selo Brezna</p>
               </div>
             </div>
         </div>
