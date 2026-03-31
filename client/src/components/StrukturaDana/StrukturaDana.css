@@ -162,8 +162,8 @@
 }
 
 @keyframes scrollInfinite {
-  0% { transform: translateX(0); }
-  100% { transform: translateX(-50%); }
+  0% { transform: translate3d(0, 0, 0); }
+  100% { transform: translate3d(-50%, 0, 0); }
 }
 
 @media (max-width: 850px) {
@@ -205,10 +205,13 @@
   }
 }
 
-@media (max-width: 480px) {
+@media (max-width: 850px) {
   .day-img {
-    flex: 0 0 180px;
-    height: 250px;
+    flex: 0 0 200px;
+    height: 280px;
+  }
+  .slider-track {
+    animation-duration: 25s;
   }
 }
 
