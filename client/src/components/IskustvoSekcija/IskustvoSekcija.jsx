@@ -1,12 +1,8 @@
 import React from "react";
 import { useInView } from "react-intersection-observer";
 import "./IskustvoSekcija.css";
-
-import main_video2 from '../../assets/new_images/main_video2.mp4';
 import pokretVideo from '../../assets/new_images/pokret.mp4';
-import danVideo from '../../assets/new_images/dan.mp4';
 import seVideo from '../../assets/new_images/se.mp4';
-import dahVideo from '../../assets/new_images/dah.mp4';
 import sviranjeVideo from '../../assets/new_images/sviranje.mp4';
 
 function IskustvoSekcija() {
