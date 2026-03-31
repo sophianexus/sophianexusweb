@@ -6,15 +6,20 @@ import sgMail from '@sendgrid/mail';
 import dotenv from 'dotenv';
 import rateLimit from 'express-rate-limit';
 import createHTMLForwardEmail from './assets/email_content.js';
+import helmet from 'helmet';
+import hpp from 'hpp';
 
 dotenv.config();
 
 const app = express();
+
+app.set(helmet())
 app.set('trust proxy', 1);
 app.use(express.json());
+app.use(hpp())
 
-const NETLIFYLINK = "https://sophianexusweb.netlify.app";
-const TESTURL = "http://localhost:5173"
+const NETLIFYLINK = process.env.SITE_LINK;
+const TESTURL = process.env.TEST_LINK;
 
 const allowedOrigins = [
   `${NETLIFYLINK}`,
@@ -86,7 +91,7 @@ app.post('/api/prijava', prijavaLimiter, async (req, res) => {
     const htmlMessage = createHTMLForwardEmail(name, number, email);
 
     const msg = {
-      to: process.env.ADMINISTRATOR_EMAIL_ADDRESS,
+      to: process.env.TEST_ADMINISTRATOR_EMAIL_ADDRESS,
       from: process.env.SENDGRID_EMAIL,
       subject: `Nova Prijava: ${name}`,
       html: htmlMessage,
