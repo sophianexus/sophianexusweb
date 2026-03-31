@@ -15,7 +15,7 @@ function ProgramSekcija() {
     {
       title: "Inner Portal Breathwork",
       subtitle: "(disanje + integracija)",
-      text: "Vođeni proces disanja koji otvara unutrašnje procese i omogućava emocionalno oslobađanje i integraciju.",
+      text: "Vođeni proces disanja koji dovodi klijenta u prošireno stanje svijesti i omogućava direktan rad sa traumama, uz duboko emocionalno oslobađanje i integraciju.",
       icon: ""
     },
     {
