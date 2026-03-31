@@ -22,6 +22,7 @@ const NETLIFYLINK = process.env.SITE_LINK;
 const TESTURL = process.env.TEST_LINK;
 
 const allowedOrigins = [
+  "https://sophianexus.me",
   `${NETLIFYLINK}`,
   `${TESTURL}`
 ];
