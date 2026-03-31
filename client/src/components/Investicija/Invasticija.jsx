@@ -1,7 +1,6 @@
 import React from "react";
 import { useInView } from "react-intersection-observer";
 import "./Investicija.css";
-import snimak from "../../assets/snimak.mov"
 import mainVideo from '../../assets/new_images/main_video.mp4';
 import vis from "../../assets/em2.jpg";
 import hrana from "../../assets/new_images/image2.jpeg";
