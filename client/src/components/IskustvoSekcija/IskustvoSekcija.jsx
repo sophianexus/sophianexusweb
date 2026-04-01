@@ -1,9 +1,11 @@
 import React from "react";
 import { useInView } from "react-intersection-observer";
 import "./IskustvoSekcija.css";
-import pokretVideo from '../../assets/new_images/pokret.mp4';
-import seVideo from '../../assets/new_images/se.mp4';
-import sviranjeVideo from '../../assets/new_images/sviranje.mp4';
+
+
+import video1 from '../../assets/new_videos/video1.mp4';
+import video2 from '../../assets/new_videos/video2.mp4';
+import video3 from '../../assets/new_videos/video3.mp4';
 
 function IskustvoSekcija() {
   const { ref, inView } = useInView({ 
@@ -49,15 +51,15 @@ function IskustvoSekcija() {
             <div className="iskustvo-dual-videos">
               <div className="iskustvo-mini-video v1">
                 <video autoPlay muted loop playsInline>
-                  <source src={sviranjeVideo} type="video/mp4" />
+                  <source src={video2} type="video/mp4" />
                 </video>
                 <div className="mini-video-overlay">Proces</div>
               </div>
               <div className="iskustvo-mini-video v2">
                 <video autoPlay muted loop playsInline>
-                  <source src={pokretVideo} type="video/mp4" />
+                  <source src={video1} type="video/mp4" />
                 </video>
-                <div className="mini-video-overlay">Pokret</div>
+                <div className="mini-video-overlay">Otpuštanje</div>
               </div>
             </div>
           </div>
@@ -78,10 +80,10 @@ function IskustvoSekcija() {
 
             <div className="iskustvo-video-wrapper">
               <video autoPlay muted loop playsInline className="iskustvo-video-element">
-                <source src={seVideo} type="video/mp4" />
+                <source src={video3} type="video/mp4" />
               </video>
               <div className="video-overlay-gradient"></div>
-              <div className="video-play-hint">Ambientalno Iskustvo</div>
+              <div className="video-play-hint">KONTAKT</div>
             </div>
           </div>
         </div>
