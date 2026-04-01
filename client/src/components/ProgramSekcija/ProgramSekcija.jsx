@@ -8,7 +8,7 @@ function ProgramSekcija() {
   const programItems = [
     {
       title: "Sacred Frequencies: Chakra Activation",
-      subtitle: "(zvučna terapija – gongovi)",
+      subtitle: "(zvučna terapija – sakralni instrumenti)",
       text: "Duboka relaksacija i balans kroz vibraciju zvuka koja utiče na tijelo i nervni sistem.",
       icon: ""
     },
