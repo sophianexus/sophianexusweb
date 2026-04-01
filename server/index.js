@@ -92,7 +92,7 @@ app.post('/api/prijava', prijavaLimiter, async (req, res) => {
     const htmlMessage = createHTMLForwardEmail(name, number, email);
 
     const msg = {
-      to: process.env.TEST_ADMINISTRATOR_EMAIL_ADDRESS,
+      to: process.env.ADMINISTRATOR_EMAIL_ADDRESS,
       from: process.env.SENDGRID_EMAIL,
       subject: `Nova Prijava: ${name}`,
       html: htmlMessage,
