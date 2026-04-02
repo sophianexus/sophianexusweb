@@ -138,6 +138,10 @@
   width: max-content;
   gap: 25px;
   animation: scrollInfinite 45s linear infinite;
+  transform: translateZ(0); 
+  backface-visibility: hidden;
+  perspective: 1000px;
+  will-change: transform;
 }
 
 .day-img {
