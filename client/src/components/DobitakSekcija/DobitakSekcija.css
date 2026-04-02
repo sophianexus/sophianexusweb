@@ -227,6 +227,18 @@
   background: #ffffff;
 }
 
+.benefit-list-number {
+  padding-right: 10px;
+  align-self: left;
+  font-weight: bold;
+  color: #666666;
+  transition: color 0.3s ease;
+}
+
+.benefit-list li:hover .benefit-list-number {
+  color: #11cf00;
+}
+
 @media (max-width: 968px) {
   .green-container {
     flex-direction: column;
@@ -364,6 +376,73 @@
   .benefit-list li::before {
     display: none;
   }
+}
+
+@media (max-width: 968px) {
+  .stacked-gallery {
+    width: 280px; 
+    height: 350px;
+    margin: 40px auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative !important;
+    pointer-events: none !important; 
+    user-select: none !important;
+  }
+
+  .gallery-card {
+    position: absolute;
+    width: 180px;
+    height: 260px;
+    left: 50%;
+    top: 50%;
+    margin-left: -90px;
+    margin-top: -130px;
+    border-radius: 15px;
+    transition: none !important;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+    user-select: none !important;
+  }
+
+  .card-4 { 
+    transform: rotate(-20deg) translateX(-60px); 
+    opacity: 0.5; 
+    z-index: 1; 
+  }
+  .card-3 { 
+    transform: rotate(-10deg) translateX(-30px); 
+    opacity: 0.7; 
+    z-index: 2; 
+  }
+  .card-5 { 
+    transform: rotate(0deg); 
+    opacity: 1; 
+    z-index: 10; 
+    box-shadow: 0 10px 25px rgba(0,0,0,0.4);
+    pointer-events: auto; 
+  }
+  .card-2 { 
+    transform: rotate(10deg) translateX(30px); 
+    opacity: 0.7; 
+    z-index: 3; 
+  }
+  .card-1 { 
+    transform: rotate(20deg) translateX(60px); 
+    opacity: 0.5; 
+    z-index: 1; 
+  }
+
+  .stacked-gallery:hover .gallery-card {
+    transform: none !important;
+    opacity: inherit !important;
+  }
+
+  .stacked-gallery:hover .card-1 { transform: rotate(-20deg) translateX(-60px); }
+  .stacked-gallery:hover .card-2 { transform: rotate(-10deg) translateX(-30px); }
+  .stacked-gallery:hover .card-3 { transform: rotate(0deg); }
+  .stacked-gallery:hover .card-4 { transform: rotate(10deg) translateX(30px); }
+  .stacked-gallery:hover .card-5 { transform: rotate(20deg) translateX(60px); }
 }
 
 @media (max-width: 400px) {
