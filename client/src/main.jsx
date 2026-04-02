@@ -13,10 +13,10 @@ import StrukturaDana from './components/StrukturaDana/StrukturaDana.jsx'
 import SmjestajSekcija from './components/SmjestajSekcija/SmjestajSekcija.jsx'
 import KvalifikacijaSekcija from './components/KvalifikacijaSekcija/KvalifikacijaSekcija.jsx'
 import Investicija from './components/Investicija/Invasticija.jsx'
-import Vazno from './components/Vazno/Vazno.jsx'
 import VaznoSekcija from './components/VaznoSekcija/VaznoSekcija.jsx'
 import FinalCTA from './components/FinalCTA/FinalCTA.jsx'
 import Footer from './components/Footer/Footer.jsx'
+
 
 createRoot(document.getElementById('root')).render(
   <StrictMode>
@@ -35,5 +35,5 @@ createRoot(document.getElementById('root')).render(
     <VaznoSekcija />
     <FinalCTA />
     <Footer />
-  </StrictMode>,
+  </StrictMode>
 )
