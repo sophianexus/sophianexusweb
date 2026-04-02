@@ -2,19 +2,45 @@ import React from "react";
 import { useInView } from "react-intersection-observer";
 import "./IskustvoSekcija.css";
 
-
-import video1 from '../../assets/new_videos/video1.mp4';
-import video2 from '../../assets/new_videos/video2.mp4';
-import video3 from '../../assets/new_videos/video3.mp4';
-
-function IskustvoSekcija() {
-  const { ref, inView } = useInView({ 
-    triggerOnce: true, 
-    threshold: 0.1 
+const LazyVideo = ({ src, className, overlayText }) => {
+  const { ref, inView } = useInView({
+    triggerOnce: true,
+    threshold: 0.1,
+    rootMargin: '100px 0px',
   });
 
   return (
-    <section ref={ref} className={`iskustvo-premium-section ${inView ? "is-visible" : ""}`}>
+    <div ref={ref} className={className} style={{ position: 'relative', overflow: 'hidden', minHeight: '150px', background: '#1a1a1a' }}>
+      {inView ? (
+        <video 
+          autoPlay 
+          muted 
+          loop 
+          playsInline 
+          preload="auto"
+          style={{ width: '100%', height: '100%', objectFit: 'cover' }}
+        >
+          <source src={src} type="video/mp4" />
+        </video>
+      ) : (
+        <div style={{ width: '100%', height: '100%' }}></div>
+      )}
+      {overlayText && <div className="mini-video-overlay">{overlayText}</div>}
+    </div>
+  );
+};
+
+function IskustvoSekcija() {
+  const { ref: sectionRef, inView: sectionVisible } = useInView({ 
+    triggerOnce: true, 
+    threshold: 0.05 
+  });
+
+  return (
+    <section 
+      ref={sectionRef} 
+      className={`iskustvo-premium-section ${sectionVisible ? "is-visible" : ""}`}
+    >
       <div className="iskustvo-ambient-glow"></div>
       
       <div className="iskustvo-container">
@@ -26,6 +52,7 @@ function IskustvoSekcija() {
             <span className="title-underline"></span>
           </h2>
         </div>
+
         <div className="iskustvo-content-grid">
           <div className="iskustvo-story-col">
             <p className="iskustvo-story-p">
@@ -48,21 +75,21 @@ function IskustvoSekcija() {
                 <span className="iskustvo-item-num">03</span> Alarm u tvom nervnom sistemu
               </div>
             </div>
+
             <div className="iskustvo-dual-videos">
-              <div className="iskustvo-mini-video v1">
-                <video autoPlay muted loop playsInline>
-                  <source src={video2} type="video/mp4" />
-                </video>
-                <div className="mini-video-overlay">Proces</div>
-              </div>
-              <div className="iskustvo-mini-video v2">
-                <video autoPlay muted loop playsInline>
-                  <source src={video1} type="video/mp4" />
-                </video>
-                <div className="mini-video-overlay">Otpuštanje</div>
-              </div>
+              <LazyVideo 
+                src="/videos/sviranje3.mp4"
+                className="iskustvo-mini-video v1"
+                overlayText="Proces"
+              />
+              <LazyVideo 
+                src="/videos/video1.mp4" 
+                className="iskustvo-mini-video v2" 
+                overlayText="Otpuštanje" 
+              />
             </div>
           </div>
+
           <div className="iskustvo-statement-col">
             <div className="iskustvo-card">
               <div className="iskustvo-card-inner">
@@ -79,9 +106,10 @@ function IskustvoSekcija() {
             </div>
 
             <div className="iskustvo-video-wrapper">
-              <video autoPlay muted loop playsInline className="iskustvo-video-element">
-                <source src={video3} type="video/mp4" />
-              </video>
+              <LazyVideo 
+                src="/videos/mainvideo.mp4"
+                className="iskustvo-video-element"
+              />
               <div className="video-overlay-gradient"></div>
               <div className="video-play-hint">KONTAKT</div>
             </div>
