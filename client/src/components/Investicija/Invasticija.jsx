@@ -1,11 +1,6 @@
 import React from "react";
 import { useInView } from "react-intersection-observer";
 import "./Investicija.css";
-import mainVideo from '../../assets/new_images/main_video.mp4';
-import vis from "../../assets/em2.jpg";
-import hrana from "../../assets/new_images/image2.jpeg";
-import sta from "../../assets/new_images/image6.jpeg";
-import em from "../../assets/em.jpg";
 
 function Investicija() {
   const { ref, inView } = useInView({ triggerOnce: true, threshold: 0.2 });
@@ -39,12 +34,12 @@ function Investicija() {
         </div>
         <div className="invest-gallery-orbital">
           <div className="orbital-item central-video">
-            <video src={mainVideo} autoPlay loop muted playsInline />
+            <video src="/videos/hvideo.mov" autoPlay loop muted playsInline />
           </div>
-          <div className="orbital-item inv-img-1"><img src={hrana} alt="slika nije pornadjena" /></div>
-          <div className="orbital-item inv-img-2"><img src={em} alt="slika nije pornadjena" /></div>
-          <div className="orbital-item inv-img-3"><img src={vis} alt="slika nije pornadjena" /></div>
-          <div className="orbital-item inv-img-4"><img src={sta} alt="slika nije pornadjena" /></div>
+          <div className="orbital-item inv-img-1"><img src="/images/nimage1.jpg" alt="slika nije pornadjena" /></div>
+          <div className="orbital-item inv-img-2"><img src="/images/em.jpg" alt="slika nije pornadjena" /></div>
+          <div className="orbital-item inv-img-3"><img src="/images/em2.jpg" alt="slika nije pornadjena" /></div>
+          <div className="orbital-item inv-img-4"><img src="/images/ins.jpeg" alt="slika nije pornadjena" /></div>
         </div>
       </div>
     </section>
