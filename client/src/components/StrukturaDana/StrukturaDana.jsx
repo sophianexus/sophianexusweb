@@ -2,26 +2,21 @@ import React, { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { useInView } from "react-intersection-observer";
 import "./StrukturaDana.css";
-import image1 from "../../assets/new_images/image1.jpeg";
-import image2 from "../../assets/new_images/image2.jpeg";
-import image5 from "../../assets/new_images/image5.jpeg";
-import image6 from "../../assets/new_images/image6.jpeg";
-import image8 from "../../assets/new_images/image8.jpeg";
-import slikaKodProzora from "../../assets/slikakodprozora.jpg";
-import emImage from "../../assets/em.jpg";
-import nature4 from "../../assets/nature4.jpg";
-import em2Image from "../../assets/em2.jpg";
-import rutinaImage from "../../assets/rutina2.jpg";
-import nature2 from "../../assets/nature2.jpg";
 
 function StrukturaDana() {
   const { ref, inView } = useInView({ triggerOnce: true, threshold: 0.2 });
   
   const stavke = [
-    { text: "jutarnji somatski rad", img: nature2 },
-    { text: "dnevni procesi (disanje / zvuk / pokret)", img: nature4 },
-    { text: "integracija", img: image5 },
-    { text: "večernji krug i povezivanje", img: emImage }
+    { text: "jutarnji somatski rad", img: "/images/nature2.jpg" },
+    { text: "dnevni procesi (disanje / zvuk / pokret)", img: "/images/nature4.jpg" },
+    { text: "integracija", img: "/images/image5.jpeg" },
+    { text: "večernji krug i povezivanje", img: "/images/em.jpg" }
+  ];
+
+  const galleryImages = [
+    "/images/nimage3.jpg", "/images/image2.jpeg", "/images/image5.jpeg", 
+    "/images/em.jpg", "/images/ins.jpeg", "/images/image8.jpeg",
+    "/images/nimage6.jpeg", "/images/em2.jpg", "/images/nimage2.jpg"
   ];
 
   const [hoveredIndex, setHoveredIndex] = useState(null);
@@ -38,16 +33,6 @@ function StrukturaDana() {
       onMouseMove={handleMouseMove}
     >
       <div className="day-container">
-        <div className="day-gallery-left">
-          <div className="slider-track">
-            {[image1, image2, image5, emImage, image6, image8,
-              slikaKodProzora, em2Image, rutinaImage
-            ].map((img, i) => (
-              <div key={i} className="day-img"><img src={img} alt={i} /></div>
-            ))}
-          </div>
-        </div>
-
         <div className="day-content-right">
           <span className="kicker-dark">Ritam Retreata</span>
           <h2>STRUKTURA DANA</h2>
@@ -61,6 +46,15 @@ function StrukturaDana() {
               >
                 <span className="item-number">0{index + 1}</span>
                 <p>{item.text}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+        <div className="day-gallery-left">
+          <div className="slider-track">
+            {[...galleryImages, ...galleryImages].map((img, i) => (
+              <div key={i} className="day-img">
+                <img src={img} alt={`Gallery ${i}`} loading="lazy" />
               </div>
             ))}
           </div>
@@ -84,8 +78,7 @@ function StrukturaDana() {
               top: 0,
               left: 0,
               pointerEvents: "none",
-              zIndex: 9999,
-              cursor: "none"
+              zIndex: 9999
             }}
           >
             <img src={stavke[hoveredIndex].img} alt="Preview" />
