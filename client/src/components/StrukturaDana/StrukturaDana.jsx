@@ -54,7 +54,7 @@ function StrukturaDana() {
           <div className="slider-track">
             {[...galleryImages, ...galleryImages].map((img, i) => (
               <div key={i} className="day-img">
-                <img src={img} alt={`Gallery ${i}`} loading="lazy" />
+                <img src={img} alt={`Gallery ${i}`} loading="eager" />
               </div>
             ))}
           </div>
