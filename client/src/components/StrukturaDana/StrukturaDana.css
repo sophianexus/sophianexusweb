@@ -205,16 +205,6 @@
   }
 }
 
-@media (max-width: 850px) {
-  .day-img {
-    flex: 0 0 200px;
-    height: 280px;
-  }
-  .slider-track {
-    animation-duration: 25s;
-  }
-}
-
 .day-structure-section {
   position: relative;
 }
@@ -243,5 +233,24 @@
 @media (max-width: 850px) {
   .floating-cursor-image {
     display: none !important;
+  }
+}
+
+@media (max-width: 850px) {
+  .day-img {
+    flex: 0 0 180px;
+    height: 250px;
+    display: block;
+    visibility: visible;
+    opacity: 1;
+  }
+  
+  .day-gallery-left {
+    -webkit-mask-image: none !important;
+    mask-image: none !important;
+  }
+
+  .slider-track {
+    animation-duration: 25s;
   }
 }
