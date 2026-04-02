@@ -1,11 +1,6 @@
 import React from "react";
 import { useInView } from "react-intersection-observer";
 import "./SmjestajSekcija.css";
-import img1 from '../../assets/slikakodprozora.jpg';
-import img2 from '../../assets/maininside.jpg';
-import img3 from '../../assets/maininside3.jpg';
-import img4 from '../../assets/maininside2.jpg';
-import img5 from '../../assets/maininside4.jpg';
 
 function SmjestajSekcija() {
   const { ref, inView } = useInView({
@@ -42,11 +37,11 @@ function SmjestajSekcija() {
         </div>
         <div className="acc-gallery-side">
           <div className="mosaic-grid">
-            <div className="mosaic-item m-1"><img src={img1} alt="Smještaj 1" /></div>
-            <div className="mosaic-item m-2"><img src={img2} alt="Smještaj 2" /></div>
-            <div className="mosaic-item m-3"><img src={img3} alt="Smještaj 3" /></div>
-            <div className="mosaic-item m-4"><img src={img4} alt="Smještaj 4" /></div>
-            <div className="mosaic-item m-5"><img src={img5} alt="Smještaj 5" /></div>
+            <div className="mosaic-item m-1"><img src="/images/slikakodprozora.jpg" alt="Image not found." /></div>
+            <div className="mosaic-item m-2"><img src="/images/maininside.jpg" alt="Image not found." /></div>
+            <div className="mosaic-item m-3"><img src="/images/maininside3.jpg" alt="Image not found." /></div>
+            <div className="mosaic-item m-4"><img src="/images/maininside2.jpg" alt="Image not found." /></div>
+            <div className="mosaic-item m-5"><img src="/images/maininside4.jpg" alt="Image not found." /></div>
           </div>
         </div>
       </div>
