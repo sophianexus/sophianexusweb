@@ -248,6 +248,13 @@
   .day-gallery-left {
     -webkit-mask-image: none !important;
     mask-image: none !important;
+    overflow: visible !important;
+    padding: 20px 0;
+  }
+  
+  .day-gallery-left::before, 
+  .day-gallery-left::after {
+    display: none !important;
   }
 
   .slider-track {
