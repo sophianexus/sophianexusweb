@@ -1,8 +1,6 @@
 import React from "react";
 import { useInView } from "react-intersection-observer";
 import "./TimSekcija.css";
-import member1 from '../../assets/timmember1.jpg';
-import member2 from '../../assets/timmember2.jpg';
 
 function TimSekcija() {
   const { ref, inView } = useInView({
@@ -15,13 +13,13 @@ function TimSekcija() {
       ime: "Iva Đurović",
       titula: "kreativni terapeut",
       opis: "Rad sa disanjem, pokretom, zvukom i kreativnim terapijama. Integrativni pristup koji kombinuje somatski rad, art terapiju i duboke transformativne procese.",
-      slika: member2
+      slika: "/images/timmember2.jpg"
     },
     {
       ime: "Elida Adrović",
       titula: "somatic & TRE facilitator",
       opis: "Rad sa tijelom kroz pokret, TRE, glas i art izražaj, sa fokusom na regulaciju nervnog sistema i oslobađanje napetosti.",
-      slika: member1
+      slika: "/images/timmember1.jpg"
     }
   ];
 
