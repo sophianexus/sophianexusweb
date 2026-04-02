@@ -1,11 +1,6 @@
 import React from "react";
 import { useInView } from "react-intersection-observer";
 import "./DobitakSekcija.css";
-import picture1 from '../../assets/stacesdobiti.jpg';
-import picture2 from '../../assets/maininside.jpg';
-import picture3 from '../../assets/hrana2.jpg';
-import picture4 from '../../assets/rutina2.jpg';
-import picture5 from '../../assets/vis.jpg';
 
 function DobitakSekcija() {
   const { ref, inView } = useInView({
@@ -24,10 +19,10 @@ function DobitakSekcija() {
           </h2>
           <div className="retreat-intro-p">Ovo je prostor gdje:</div>
           <ul className="benefit-list">
-            <li>tijelo počinje da se opušta</li>
-            <li>nervni sistem ulazi u balans</li>
-            <li>emocije koje te preplavljuju počinju da izlaze</li>
-            <li>vraćaš osjećaj sebe</li>
+            <li><span className="benefit-list-number">1.</span> tijelo počinje da se opušta</li>
+            <li><span className="benefit-list-number">2.</span> nervni sistem ulazi u balans</li>
+            <li><span className="benefit-list-number">3.</span> emocije koje te preplavljuju počinju da izlaze</li>
+            <li><span className="benefit-list-number">4.</span> vraćaš osjećaj sebe</li>
           </ul>
           <div className="retreat-footer-note">
             <div className="mini-divider"></div>
@@ -36,12 +31,12 @@ function DobitakSekcija() {
         </div>
         <div className="green-column image-col-green">
           <div className="stacked-gallery">
-            <div className="gallery-card card-1"><img src={picture5} alt="Reset 1" /></div>
-            <div className="gallery-card card-2"><img src={picture4} alt="Reset 2" /></div>
-            <div className="gallery-card card-3"><img src={picture3} alt="Reset 3" /></div>
-            <div className="gallery-card card-4"><img src={picture2} alt="Reset 4" /></div>
+            <div className="gallery-card card-1"><img src="/images/vis.jpg" alt="Reset 1" /></div>
+            <div className="gallery-card card-2"><img src="/images/rutina2.jpg" alt="Reset 2" /></div>
+            <div className="gallery-card card-3"><img src="/images/hrana2.jpg" alt="Reset 3" /></div>
+            <div className="gallery-card card-4"><img src="/images/maininside.jpg" alt="Reset 4" /></div>
             <div className="gallery-card card-5">
-               <img src={picture1} alt="Reset 5" />
+               <img src="/images/stacesdobiti.jpg" alt="Reset 5" />
                <div className="card-glass-overlay">REGENERACIJA</div>
             </div>
           </div>
